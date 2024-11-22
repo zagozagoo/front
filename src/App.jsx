@@ -11,7 +11,8 @@ function App() {
 
   const getUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/person");
+      // editei aqui:
+      const res = await axios.get("https://back-h8u7.onrender.com/api/person");
       setList(res.data);
       console.log(res.data); 
     } catch (error) {
@@ -60,7 +61,7 @@ function App() {
         <td className="px-6 py-4">{user.lastname}</td>
         <td className="px-6 py-4">R${user.salary}</td>
         <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => {deleteUser(user.id)}}>Delete</a>
+          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => {deleteUser(user._id)}}>Delete</a>
         </td>
       </tr>
     ));
