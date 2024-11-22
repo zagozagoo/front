@@ -22,7 +22,8 @@ function App() {
 
   const registerUser = async () => {
     try { 
-      await axios.post("http://localhost:8080/api/person",{
+      // editei aqui:
+      await axios.post("https://back-h8u7.onrender.com/api/person",{
         name, lastname, salary
       });
     } catch (error) {
@@ -32,7 +33,8 @@ function App() {
 
   const deleteUser = async (id) => {
     try { 
-      await axios.delete(`http://localhost:8080/api/person/${id}`);
+      // editei aqui:
+      await axios.delete(`https://back-h8u7.onrender.com/api/person/${id}`);
       getUsers()
     } catch (error) {
       console.error("Erro ao inserir", error);
